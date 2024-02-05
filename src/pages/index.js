@@ -1,12 +1,14 @@
 import Image from "next/image";
 import { Inter } from "next/font/google";
 import { Container } from "postcss";
+import Category from "./category";
 import image1 from '../../public/bloghome.jpg'
 
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props) {
   return (
+    <>
     <section className="home_container h-[80vh] w-[70%] m-auto cursor-pointer">
       <div className="homeheading">
         <h2 style={{ color: props.mode === 'light' ? '' : 'white' }} className="text-center font-extrabold text-5xl tracking-wide uppercase w-full mt-12">the best form of expression is blo<span className="text-red-600">gg</span>ing</h2>
@@ -27,5 +29,7 @@ export default function Home(props) {
         </div>
       </div>
     </section>
+    <Category/>
+    </>
   );
 }

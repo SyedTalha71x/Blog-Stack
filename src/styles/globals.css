@@ -23,9 +23,40 @@ body {
   transform: scale(1.1);
   transition: .4s;
 }
-.homeimage{
+
+.homeimage {
   height: 100%;
   width: 100%;
+}
+
+.row_1:hover {
+  transform: scale(1.1);
+  transition: .4s all;
+}
+
+.row_2:hover {
+  transform: scale(1.1);
+  transition: .4s all;
+}
+
+.row_3:hover {
+  transform: scale(1.1);
+  transition: .4s all;
+}
+
+.row_4:hover {
+  transform: scale(1.1);
+  transition: .4s all;
+}
+
+.row_5:hover {
+  transform: scale(1.1);
+  transition: .4s all;
+}
+
+.row_6:hover {
+  transform: scale(1.1);
+  transition: .4s all;
 }
 
 @media screen and (max-width: 1020px) {
