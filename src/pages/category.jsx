@@ -66,8 +66,6 @@ const category = (props) => {
                     </div>
                 </div>
             </div>
-
-            <Cards />
         </>
     )
 }

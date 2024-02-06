@@ -3,6 +3,7 @@ import { Inter } from "next/font/google";
 import { Container } from "postcss";
 import Category from "./category";
 import image1 from '../../public/bloghome.jpg'
+import Cards from "./cards";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,7 @@ export default function Home(props) {
         </div>
       </section>
       <Category />
+      <Cards />
     </>
   );
 }

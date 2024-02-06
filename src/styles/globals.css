@@ -59,6 +59,7 @@ body {
   transition: .4s all;
 }
 
+
 @media screen and (max-width: 1020px) {
   .main_head {
     margin-right: auto;

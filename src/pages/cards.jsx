@@ -2,6 +2,7 @@ import React from 'react'
 import Image from 'next/image'
 import nature from '../../public/nature1.jpg'
 import Buttons from './buttons'
+import Link from 'next/link'
 
 const cards = (props) => {
 
@@ -23,9 +24,11 @@ const cards = (props) => {
                                 </div>
                                 <div className="rightcard">
                                     <div className="cardcontent mt-4">
-                                        <span  className='font-semibold'>{fullDate}</span>
-                                        <h1  className='text-3xl mt-1 uppercase font-extrabold w-full rounded-sm'>Heaven for bloggers</h1>
-                                        <p  c-1ssName='mt-2 text-gray-700'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cumque nemo assumenda temporibus tempora at unde, ipsum quibusdam, consequatur maiores eligendi non ducimus? Odit fugit iste molestiae eum! Blanditiis, tenetur. Qui architecto eaque ab corporis voluptates aperiam error provident suscipit!..</p>
+                                        <span className='font-semibold'>{fullDate}</span>
+                                       
+                                            <h1 className='text-3xl mt-1 uppercase font-extrabold w-full rounded-sm'>Heaven for bloggers</h1>
+                                     
+                                        <p c-1ssName='mt-2 text-gray-700'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cumque nemo assumenda temporibus tempora at unde, ipsum quibusdam, consequatur maiores eligendi non ducimus? Odit fugit iste molestiae eum! Blanditiis, tenetur. Qui architecto eaque ab corporis voluptates aperiam error provident suscipit!..</p>
                                     </div>
                                 </div>
                             </div>
@@ -36,9 +39,9 @@ const cards = (props) => {
                                 <div className="rightcard">
                                     <div className="cardcontent">
                                         <div className="cardcontent mt-4">
-                                            <span  className='font-semibold'>{fullDate}</span>
-                                            <h1  className='text-3xl mt-1 uppercase font-extrabold w-full'>Heaven for bloggers</h1>
-                                            <p  className='mt-1 text-gray-700'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cumque nemo assumenda temporibus tempora at unde, ipsum quibusdam, consequatur maiores eligendi non ducimus? Odit fugit iste molestiae eum! Blanditiis, tenetur. Qui architecto eaque ab corporis voluptates aperiam error provident suscipit!..</p>
+                                            <span className='font-semibold'>{fullDate}</span>
+                                            <h1 className='text-3xl mt-1 uppercase font-extrabold w-full'>Heaven for bloggers</h1>
+                                            <p className='mt-1 text-gray-700'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cumque nemo assumenda temporibus tempora at unde, ipsum quibusdam, consequatur maiores eligendi non ducimus? Odit fugit iste molestiae eum! Blanditiis, tenetur. Qui architecto eaque ab corporis voluptates aperiam error provident suscipit!..</p>
                                         </div>
                                     </div>
                                 </div>
@@ -50,9 +53,9 @@ const cards = (props) => {
                                 <div className="rightcard">
                                     <div className="cardcontent">
                                         <div className="cardcontent mt-4">
-                                            <span  className='font-semibold'>{fullDate}</span>
-                                            <h1  className='text-3xl mt-1 uppercase font-extrabold w-full'>Heaven for bloggers</h1>
-                                            <p  className='mt-1 text-gray-700'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cumque nemo assumenda temporibus tempora at unde, ipsum quibusdam, consequatur maiores eligendi non ducimus? Odit fugit iste molestiae eum! Blanditiis, tenetur. Qui architecto eaque ab corporis voluptates aperiam error provident suscipit!...</p>
+                                            <span className='font-semibold'>{fullDate}</span>
+                                            <h1 className='text-3xl mt-1 uppercase font-extrabold w-full'>Heaven for bloggers</h1>
+                                            <p className='mt-1 text-gray-700'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aperiam nam Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cumque nemo assumenda temporibus tempora at unde, ipsum quibusdam, consequatur maiores eligendi non ducimus? Odit fugit iste molestiae eum! Blanditiis, tenetur. Qui architecto eaque ab corporis voluptates aperiam error provident suscipit!...</p>
                                         </div>
                                     </div>
                                 </div>
