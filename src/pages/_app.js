@@ -1,3 +1,4 @@
+import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
 import "@/styles/globals.css";
 import React, { useState } from "react";
@@ -21,6 +22,8 @@ export default function App({ Component, pageProps }) {
   }
   return <>
     <Navbar mode={mode} togglemode={togglemode} />
+
     <Component mode={mode}  {...pageProps} />
+    <Footer />
   </>;
 }
