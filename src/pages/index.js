@@ -24,7 +24,13 @@ export default function Home(props) {
                 <div>
                   <h2 style={{ color: props.mode === 'light' ? '' : 'white' }} className="font-bold uppercase text-3xl w-full">Explore the world of blogging</h2>
                   <p style={{ color: props.mode === 'light' ? '' : 'gray' }} className="w-full mt-6 text-xl text-gray-700">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem repudiandae, aut laborum odit repellendus cumque dolor nostrum? Ad distinctio, totam incidunt quo repellat optio at iure praesentium dolor molestias.</p>
+                  <div className="indexbtn mt-3 flex justify-evenly items-center">
+                    <button>
+                      Explore Now
+                    </button>
+                  </div>
                 </div>
+
               </div>
             </div>
           </div>

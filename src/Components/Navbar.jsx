@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import Link from 'next/link';
+import { signOut } from 'next-auth/react';
 
 const Navbar = (props) => {
 
@@ -53,8 +54,14 @@ const Navbar = (props) => {
                             <li className="border-b border-gray-400 my-8 uppercase">
                                 <Link style={{ color: props.mode === 'light' ? '' : 'white' }} href={"/login"}>Login</Link>
                             </li>
+                            <li className="border-b border-gray-400 my-8 uppercase">
+                                <Link style={{ color: props.mode === 'light' ? '' : 'white' }} href={"/addblog"}>Write</Link>
+                            </li>
                             <li>
                                 <a style={{ color: props.mode === 'light' ? '' : 'black', backgroundColor: props.mode === 'light' ? '' : 'lightblue' }} onClick={props.togglemode} className='text-[15px]  bg-black text-white py-2 px-5  rounded-md '>Dark mode</a>
+                            </li>
+                            <li>
+                                <a style={{ color: props.mode === 'light' ? '' : 'black', backgroundColor: props.mode === 'light' ? '' : 'lightblue' }} onClick={() => { signOut() }} className='text-[15px]  bg-black text-white py-2 px-5  rounded-md '>Logout</a>
                             </li>
                         </ul>
                     </div>
@@ -74,8 +81,16 @@ const Navbar = (props) => {
                         <Link style={{ color: props.mode === 'light' ? '' : 'white' }} className='text-[17px] font-semibold hover:underline underline-offset-4   rounded-md ' href={"/login"}>Login</Link>
                     </li>
                     <li>
+                        <Link style={{ color: props.mode === 'light' ? '' : 'white' }} className='text-[17px] font-semibold hover:underline underline-offset-4   rounded-md ' href={"/addblog"}>Write</Link>
+                    </li>
+
+                    <li>
                         <a style={{ color: props.mode === 'light' ? '' : 'black', backgroundColor: props.mode === 'light' ? '' : 'lightblue' }} onClick={props.togglemode} className='text-[15px]  bg-black text-white py-2 px-5  rounded-md '>Dark mode</a>
                     </li>
+                    <li>
+                        <a style={{ color: props.mode === 'light' ? '' : 'black', backgroundColor: props.mode === 'light' ? '' : 'lightblue' }} onClick={() => { signOut() }} className='text-[15px]  bg-black text-white py-2 px-5  rounded-md '>Logout</a>
+                    </li>
+
                 </ul>
             </nav>
             <style>{`
