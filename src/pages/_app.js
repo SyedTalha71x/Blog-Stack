@@ -18,13 +18,14 @@ export default function App({ Component, pageProps }) {
     else {
       setmode('light');
       document.body.style.backgroundColor = 'white';
+
       // document.body.style.transition = ".4s ease-in-out";
     }
   }
   return <>
     <SessionProvider session={pageProps.session}>
       <Navbar mode={mode} togglemode={togglemode} />
-      <Component mode={mode}  {...pageProps} />
+      <Component mode={mode} {...pageProps} />
       <Footer />
     </SessionProvider>
   </>;

@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
 import Link from 'next/link';
-import { signOut } from 'next-auth/react';
+import { useSession, signIn, signOut } from 'next-auth/react';
 
 const Navbar = (props) => {
 
+    const { data: session, status } = useSession();
 
     const [isNavOpen, setIsNavOpen] = useState(false);
     return (
@@ -52,17 +53,19 @@ const Navbar = (props) => {
                                 <Link style={{ color: props.mode === 'light' ? '' : 'white' }} href={"/contact"}>Contact</Link>
                             </li>
                             <li className="border-b border-gray-400 my-8 uppercase">
-                                <Link style={{ color: props.mode === 'light' ? '' : 'white' }} href={"/login"}>Login</Link>
-                            </li>
-                            <li className="border-b border-gray-400 my-8 uppercase">
                                 <Link style={{ color: props.mode === 'light' ? '' : 'white' }} href={"/addblog"}>Write</Link>
                             </li>
-                            <li>
-                                <a style={{ color: props.mode === 'light' ? '' : 'black', backgroundColor: props.mode === 'light' ? '' : 'lightblue' }} onClick={props.togglemode} className='text-[15px]  bg-black text-white py-2 px-5  rounded-md '>Dark mode</a>
-                            </li>
-                            <li>
+                            <div className='mt-[1px]'>
+                                <label class="relative inline-flex items-center cursor-pointer">
+                                    <input type="checkbox" value="" class="sr-only peer" />
+                                    <div onClick={props.togglemode} class="w-11 h-6 bg-gray-200 rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-black"></div>
+                                </label>
+                            </div>
+                            {session ? <li>
                                 <a style={{ color: props.mode === 'light' ? '' : 'black', backgroundColor: props.mode === 'light' ? '' : 'lightblue' }} onClick={() => { signOut() }} className='text-[15px]  bg-black text-white py-2 px-5  rounded-md '>Logout</a>
-                            </li>
+                            </li> : <li className="border-b border-gray-400 my-8 uppercase">
+                                <Link style={{ color: props.mode === 'light' ? '' : 'white' }} href={"/login"}>Login</Link>
+                            </li>}
                         </ul>
                     </div>
                 </section>
@@ -83,13 +86,15 @@ const Navbar = (props) => {
                     <li>
                         <Link style={{ color: props.mode === 'light' ? '' : 'white' }} className='text-[17px] font-semibold hover:underline underline-offset-4   rounded-md ' href={"/addblog"}>Write</Link>
                     </li>
-
-                    <li>
-                        <a style={{ color: props.mode === 'light' ? '' : 'black', backgroundColor: props.mode === 'light' ? '' : 'lightblue' }} onClick={props.togglemode} className='text-[15px]  bg-black text-white py-2 px-5  rounded-md '>Dark mode</a>
-                    </li>
-                    <li>
+                    <div className='mt-[1px]'>
+                        <label class="relative inline-flex items-center cursor-pointer">
+                            <input type="checkbox" value="" class="sr-only peer" />
+                            <div onClick={props.togglemode} class="w-11 h-6 bg-gray-200 rounded-full peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-gray-600 peer-checked:bg-black"></div>
+                        </label>
+                    </div>
+                    {session && <li>
                         <a style={{ color: props.mode === 'light' ? '' : 'black', backgroundColor: props.mode === 'light' ? '' : 'lightblue' }} onClick={() => { signOut() }} className='text-[15px]  bg-black text-white py-2 px-5  rounded-md '>Logout</a>
-                    </li>
+                    </li>}
 
                 </ul>
             </nav>

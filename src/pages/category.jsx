@@ -12,7 +12,7 @@ const category = (props) => {
         <>
             <div className="categorymainpage h-full w-[70%] m-auto cursor-pointer p-10">
                 <div className="categoryheading">
-                    <h2 className='text-2xl  font-bold' >Popular Categories</h2>
+                    <h2 className='text-2xl text-black  font-bold' >Popular Categories</h2>
                 </div>
 
                 <div className="category_row grid grid-cols-6 mt-6 w-full">
