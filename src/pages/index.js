@@ -8,6 +8,8 @@ import Cards from "./cards";
 const inter = Inter({ subsets: ["latin"] });
 
 export default function Home(props) {
+
+  // const page = parseInt(searchParams.page) || 1;
   return (
     <>
       <section className="home_container h-[80vh] w-[70%] m-auto cursor-pointer">

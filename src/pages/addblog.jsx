@@ -1,11 +1,31 @@
 
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import Image from 'next/image'
 import addimage from '../../public/nature1.jpg'
 import { IoMdAddCircle } from "react-icons/io";
+import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/router';
 
 const addblog = () => {
     const [open, setopen] = useState(false)
+
+    const router = useRouter();
+
+    const { data, status } = useSession();
+    console.log(data, status);
+
+    useEffect(() => {
+        if (status === 'unauthenticated') {
+            router.push('/login');
+        }
+        else if (status === 'authenticated') {
+            router.push('/addblog')
+        }
+
+    }, [router.isReady])
+
+
+
 
     return (
         <>

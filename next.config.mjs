@@ -2,9 +2,33 @@
 const nextConfig = {
   reactStrictMode: true,
   images: {
-    domains: ["i.pinimg.com", "cdn3.vectorstock.com", "cdn.freebiesupply.com", "cdn4.vectorstock.com",
-      "static.vecteezy.com"]
-  }
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.pexels.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'i.pinimg.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn3.vectorstock.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn4.vectorstock.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'cdn.freebiesupply.com',
+      },
+      {
+        protocol: 'https',
+        hostname: 'static.vecteezy.com',
+      },
+    ],
+  },
 };
 
 export default nextConfig;

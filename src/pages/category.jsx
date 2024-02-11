@@ -52,7 +52,7 @@ const category = (props) => {
 
                 <div className="category_row grid grid-cols-6 mt-6 w-full">
                     {categories.map((k) => {
-                        return <Link key={k.title} href={"/Blogpost?cat=style"} className={`${k.slug}`} >
+                        return <Link key={k.title} href={"/blog?cat=style"} className={`${k.slug}`} >
                             <div className="row_1 grid grid-cols-2 bg-slate-300 p-4 rounded-lg m-1">
                                 <div className="leftrow">
                                     {k.img && <Image src={k.img} height={20} width={20} className='rounded-full' />}

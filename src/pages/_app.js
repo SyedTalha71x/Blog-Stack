@@ -26,7 +26,7 @@ export default function App({ Component, pageProps }) {
     <SessionProvider session={pageProps.session}>
       <Navbar mode={mode} togglemode={togglemode} />
       <Component mode={mode} {...pageProps} />
-      <Footer />
+      <Footer mode={mode} />
     </SessionProvider>
   </>;
 }
