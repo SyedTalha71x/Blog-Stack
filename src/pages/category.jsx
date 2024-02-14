@@ -40,9 +40,6 @@ const category = (props) => {
         }
         fetchCategories();
     }, [router.isReady])
-
-    console.log(categories);
-
     return (
         <>
             <div className="categorymainpage h-full w-[70%] m-auto cursor-pointer p-10">

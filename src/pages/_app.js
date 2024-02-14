@@ -1,11 +1,15 @@
 import Footer from "@/Components/Footer";
 import Navbar from "@/Components/Navbar";
 import "@/styles/globals.css";
-import React, { useState } from "react";
-import { SessionProvider } from 'next-auth/react'
+import React, { useState, useEffect } from "react";
+import { SessionProvider, signOut } from 'next-auth/react'
+import { useRouter } from "next/router";
 
 
 export default function App({ Component, pageProps }) {
+
+
+  const router = useRouter();
 
   const [mode, setmode] = useState('light')
 

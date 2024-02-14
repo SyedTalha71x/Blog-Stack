@@ -1,24 +1,46 @@
 import NextAuth from "next-auth";
 import GithubProvider from 'next-auth/providers/github'
-import GoogleProvider from 'next-auth/providers/google'
-import { PrismaAdapter } from "@auth/prisma-adapter"
-import { PrismaClient } from "@prisma/client"
-import prisma from "../connect";
+import CredentialsProvider from "next-auth/providers/credentials";
+import User from "../../../../Models/User";
+import connectDB from "../../../../DBConnecttion/db";
+import CryptoJS from "crypto-js";
 
-// const prisma = new PrismaClient()
 
 export const authOptions = {
-    adapter: PrismaAdapter(prisma),
     providers: [
         GithubProvider({
-            clientId: 'a9ad7b018f0addc5ba30',
-            clientSecret: '061269b8808883a8e24608c6acdc836c4f390505',
+            clientId: '1b73f1690a9948c480be',
+            clientSecret: '92f2587cc1065199e98f65e1caf759c8975ceece',
         }),
-        GoogleProvider({
-            clientId: '164128864419-ki4u0ha3u942be444ks4v9v13skfae92.apps.googleusercontent.com',
-            clientSecret: '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',
+        CredentialsProvider({
+            id: "credentials",
+            name: "Credentials",
+            credentials: {
+                email: { label: 'Email', type: 'text' },
+                password: { label: 'Password', type: "text" },
+            },
+            async authorize(credentials, req) {
+                await connectDB();
+                try {
+                    const user = await User.findOne({ email: credentials.email });
+                    if (user) {
+                        const bytes = CryptoJS.AES.decrypt(user.password, 'DoNtRuN$6w7s');
+                        const decryptedPassword = bytes.toString(CryptoJS.enc.Utf8);
+                        if (credentials.password === decryptedPassword) {
+                            return Promise.resolve({ email: user.email, name: user.name });
+                        } else {
+                            return Promise.resolve(null);
+                        }
+                    } else {
+                        return Promise.resolve(null);
+                    }
+                } catch (error) {
+                    console.error("Error during authentication:", error);
+                    return Promise.resolve(null);
+                }
+            },
         })
     ],
 };
 
-export default NextAuth(authOptions)
+export default NextAuth(authOptions);

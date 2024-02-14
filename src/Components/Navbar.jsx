@@ -1,10 +1,11 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Link from 'next/link';
 import { useSession, signIn, signOut } from 'next-auth/react';
 
 const Navbar = (props) => {
 
     const { data: session, status } = useSession();
+
 
     const [isNavOpen, setIsNavOpen] = useState(false);
     return (
@@ -63,7 +64,7 @@ const Navbar = (props) => {
                             </div>
                             {session ? <li>
                                 <a style={{ color: props.mode === 'light' ? '' : 'black', backgroundColor: props.mode === 'light' ? '' : 'lightblue' }} onClick={() => { signOut() }} className='text-[15px]  bg-black text-white py-2 px-5  rounded-md '>Logout</a>
-                            </li> : <li className="border-b border-gray-400 my-8 uppercase">
+                            </li> : <li className="border-b border-gray-400 my-8 uppercase ">
                                 <Link style={{ color: props.mode === 'light' ? '' : 'white' }} href={"/login"}>Login</Link>
                             </li>}
                         </ul>

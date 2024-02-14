@@ -33,9 +33,8 @@ const cards = (props) => {
                 console.log(error);
             }
         }
-        if (router.isReady) {
-            fetchposts();
-        }
+        fetchposts();
+
     }, [router.isReady])
 
     const currentDate = new Date();

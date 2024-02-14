@@ -2,11 +2,9 @@ import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
 const userSchema = new Schema({
-    _id: String,
     name: String,
     email: { type: String, unique: true },
-    emailVerified: Date,
-    image: String
+    password: { type: String, required: true },
 });
 
 mongoose.models = {}
