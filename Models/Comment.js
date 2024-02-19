@@ -2,11 +2,8 @@ import mongoose from "mongoose";
 import { Schema } from "mongoose";
 
 const commentSchema = new Schema({
-    _id: String,
-    createdAt: { type: Date, default: Date.now },
+    username: String,
     desc: String,
-    userEmail: String,
-    postSlug: String
 });
 
 

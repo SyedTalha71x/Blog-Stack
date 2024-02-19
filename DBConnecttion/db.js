@@ -1,6 +1,6 @@
 import mongoose from "mongoose";
 
-const MONGO_URI = 'mongodb://127.0.0.1:27017/BloggerWorld';
+const MONGO_URI = 'mongodb://127.0.0.1:27017/Blogapp';
 
 export default async function connectDB() {
     try {

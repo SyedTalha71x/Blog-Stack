@@ -68,20 +68,22 @@ const cards = (props) => {
                             {currentPosts.map((k) => {
                                 const truncatedTitle = k.title.length > 30 ? k.title.slice(0, 30) + '....' : k.title;
                                 const truncatedDesc = k.desc.length > 200 ? k.desc.slice(0, 200) + '...' : k.desc;
-                                return <div className="cardrow1 grid grid-cols-2 gap-10 mt-3">
-                                    <div className="leftcard">
-                                        <Image src={k.img} height={100} width={100} className='card_image h-[300px] w-full' />
-                                    </div>
-                                    <div className="rightcard">
-                                        <div className="cardcontent mt-4">
-                                            <span className='font-semibold'>{fullDate}</span>
+                                return <Link href={`/Blogpost/${k.slug}`}>
+                                    <div className="cardrow1 grid grid-cols-2 gap-10 mt-3" key={k.slug}>
+                                        <div className="leftcard">
+                                            <Image src={k.img} height={100} width={100} className='card_image h-[300px] w-full' />
+                                        </div>
+                                        <div className="rightcard">
+                                            <div className="cardcontent mt-4">
+                                                <span className='font-semibold'>{fullDate}</span>
 
-                                            <h1 className='text-2xl mt-1 uppercase font-extrabold w-full rounded-sm'>{truncatedTitle}</h1>
+                                                <h1 className='text-2xl mt-1 uppercase font-extrabold w-full rounded-sm'>{truncatedTitle}</h1>
 
-                                            <p c-1ssName='mt-2 text-gray-700'>{truncatedDesc}</p>
+                                                <p c-1ssName='mt-2 text-gray-700'>{truncatedDesc}</p>
+                                            </div>
                                         </div>
                                     </div>
-                                </div>
+                                </Link>
                             })}
                         </div>
                     </div>

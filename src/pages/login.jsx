@@ -23,7 +23,6 @@ const login = () => {
     else if (e.target.name == 'password') {
       setpassword(e.target.value);
     }
-
   }
 
 
